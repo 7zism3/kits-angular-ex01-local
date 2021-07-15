@@ -8,9 +8,11 @@ import { Movie } from '../model/movie';
 })
 export class MovieService {
   [x: string]: any;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.baseURL = this.baseURL + 'Movies';
+  }
 
-  baseURL: string = 'https://60ed48f1a78dc700178addd6.mockapi.io/Movies';
+  baseURL: string = 'https://60ed48f1a78dc700178addd6.mockapi.io/';
   movies: Movie[] = [];
 
   public getMovies(): Observable<any> {
